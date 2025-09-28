@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://birbbh08c70j2"]
+
+[ext_resource type="Script" uid="uid://ctu484fq7gaow" path="res://gold_bar.gd" id="1_l4tke"]
+[ext_resource type="Texture2D" uid="uid://bq74isfsx3nqo" path="res://things bananas/PikPng.com_gold-bricks-png_3922408.png" id="2_l4tke"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2e3xs"]
+
+[node name="RigidBody2D" type="RigidBody2D"]
+script = ExtResource("1_l4tke")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1.0140967, 0.0692811)
+scale = Vector2(0.41051534, 0.06023229)
+texture = ExtResource("2_l4tke")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(5.9997916, 1.8420638)
+shape = SubResource("RectangleShape2D_2e3xs")

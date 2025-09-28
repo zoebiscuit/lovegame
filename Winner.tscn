@@ -1,0 +1,178 @@
+[gd_scene load_steps=13 format=3 uid="uid://fui6fmnp32oe"]
+
+[ext_resource type="Script" uid="uid://cr06s1ux2ifir" path="res://game_over.gd" id="1_c2m3u"]
+[ext_resource type="Texture2D" uid="uid://bwq2wtdpiy0rh" path="res://things bananas/2.png" id="2_c2m3u"]
+[ext_resource type="Texture2D" uid="uid://bq74isfsx3nqo" path="res://things bananas/PikPng.com_gold-bricks-png_3922408.png" id="3_khvmi"]
+[ext_resource type="FontFile" uid="uid://dffmuedamie5q" path="res://dogica/OTF/dogicabold.otf" id="4_ityh0"]
+[ext_resource type="FontFile" uid="uid://cpcjicrh4opsg" path="res://dogica/OTF/dogica.otf" id="5_5phxe"]
+[ext_resource type="FontFile" uid="uid://b44ghrjkl2un8" path="res://dogica/OTF/dogicapixelbold.otf" id="6_cpmwb"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_3y56u"]
+font = ExtResource("4_ityh0")
+font_size = 91
+font_color = Color(0.99215686, 0.91764706, 0.7137255, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_w4h2f"]
+font = ExtResource("5_5phxe")
+font_size = 32
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3fonj"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_758bs"]
+bg_color = Color(0.32729906, 0.32729906, 0.32729903, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rr04i"]
+bg_color = Color(0.34968925, 0.34968933, 0.3496893, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_067b4"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_c2m3u")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.12773594, 0.12773594, 0.12773594, 1)
+
+[node name="Woman" type="TextureRect" parent="ColorRect"]
+layout_mode = 0
+offset_left = 417.0
+offset_top = 43.0
+offset_right = 1586.0
+offset_bottom = 831.0
+texture = ExtResource("2_c2m3u")
+
+[node name="Gold" type="TextureRect" parent="ColorRect"]
+layout_mode = 0
+offset_left = 753.0
+offset_top = 576.99994
+offset_right = 1060.0
+offset_bottom = 1272.0
+rotation = 1.3934318
+scale = Vector2(0.23521808, -0.22578442)
+texture = ExtResource("3_khvmi")
+
+[node name="GAMEOVER" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -465.0
+offset_top = -270.0
+offset_right = 445.0
+offset_bottom = -133.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "BILLY WON!"
+label_settings = SubResource("LabelSettings_3y56u")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 155.0
+offset_right = 1001.0
+offset_bottom = 334.0
+theme_override_constants/line_spacing = 15
+theme_override_constants/paragraph_spacing = 5
+text = "This gift looks.. pleasing. 
+Uhh Bobby, was it?
+
+Go back to main menu?
+"
+label_settings = SubResource("LabelSettings_w4h2f")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -273.0
+offset_top = -24.0
+offset_right = 151.0
+offset_bottom = 281.61017
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="YES" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_cpmwb")
+theme_override_font_sizes/font_size = 75
+theme_override_styles/normal = SubResource("StyleBoxFlat_3fonj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_758bs")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rr04i")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_067b4")
+text = "YES
+"
+
+[node name="NO" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_cpmwb")
+theme_override_font_sizes/font_size = 75
+theme_override_styles/normal = SubResource("StyleBoxFlat_3fonj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_758bs")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rr04i")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_067b4")
+text = "NO
+"
+
+[connection signal="pressed" from="VBoxContainer/YES" to="." method="_on_yes_pressed"]
+[connection signal="pressed" from="VBoxContainer/NO" to="." method="_on_no_pressed"]

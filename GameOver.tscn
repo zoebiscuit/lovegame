@@ -1,0 +1,173 @@
+[gd_scene load_steps=13 format=3 uid="uid://hkk3ehnpl2y0"]
+
+[ext_resource type="FontFile" uid="uid://dffmuedamie5q" path="res://dogica/OTF/dogicabold.otf" id="1_eksk4"]
+[ext_resource type="Script" uid="uid://cr06s1ux2ifir" path="res://game_over.gd" id="1_xl4ts"]
+[ext_resource type="FontFile" uid="uid://b44ghrjkl2un8" path="res://dogica/OTF/dogicapixelbold.otf" id="2_3y56u"]
+[ext_resource type="Texture2D" uid="uid://1ryddmm4drt6" path="res://things bananas/2025_09_27_0nm_Kleki(1).png" id="2_xl4ts"]
+[ext_resource type="Texture2D" uid="uid://bq74isfsx3nqo" path="res://things bananas/PikPng.com_gold-bricks-png_3922408.png" id="3_jywu3"]
+[ext_resource type="FontFile" uid="uid://cpcjicrh4opsg" path="res://dogica/OTF/dogica.otf" id="6_ua7od"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_3y56u"]
+font = ExtResource("1_eksk4")
+font_size = 100
+font_color = Color(0.99215686, 0.91764706, 0.7137255, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_w4h2f"]
+font = ExtResource("6_ua7od")
+font_size = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3fonj"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_758bs"]
+bg_color = Color(0.32729906, 0.32729906, 0.32729903, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rr04i"]
+bg_color = Color(0.34968925, 0.34968933, 0.3496893, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_067b4"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xl4ts")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.12773594, 0.12773594, 0.12773594, 1)
+
+[node name="Man" type="TextureRect" parent="ColorRect"]
+layout_mode = 0
+offset_left = 470.0
+offset_top = 60.0
+offset_right = 1639.0
+offset_bottom = 848.0
+texture = ExtResource("2_xl4ts")
+
+[node name="Gold" type="TextureRect" parent="ColorRect"]
+layout_mode = 0
+offset_left = 753.0
+offset_top = 576.99994
+offset_right = 1060.0
+offset_bottom = 1272.0
+rotation = 1.3934318
+scale = Vector2(0.23521808, -0.22578442)
+texture = ExtResource("3_jywu3")
+
+[node name="GAMEOVER" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -526.0
+offset_top = -226.0
+offset_right = 374.0
+offset_bottom = -89.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "GAME OVER"
+label_settings = SubResource("LabelSettings_3y56u")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 129.0
+offset_top = 223.0
+offset_right = 929.0
+offset_bottom = 406.0
+text = "GO TO MAIN MENU?
+"
+label_settings = SubResource("LabelSettings_w4h2f")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -273.0
+offset_top = -24.0
+offset_right = 151.0
+offset_bottom = 281.61017
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="YES" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_3y56u")
+theme_override_font_sizes/font_size = 75
+theme_override_styles/normal = SubResource("StyleBoxFlat_3fonj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_758bs")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rr04i")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_067b4")
+text = "YES
+"
+
+[node name="NO" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_3y56u")
+theme_override_font_sizes/font_size = 75
+theme_override_styles/normal = SubResource("StyleBoxFlat_3fonj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_758bs")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rr04i")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_067b4")
+text = "NO
+"
+
+[connection signal="pressed" from="VBoxContainer/YES" to="." method="_on_yes_pressed"]
+[connection signal="pressed" from="VBoxContainer/NO" to="." method="_on_no_pressed"]

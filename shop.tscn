@@ -1,0 +1,346 @@
+[gd_scene load_steps=20 format=3 uid="uid://dt10djf0i4ceo"]
+
+[ext_resource type="Texture2D" uid="uid://1ryddmm4drt6" path="res://things bananas/2025_09_27_0nm_Kleki(1).png" id="1_fgaav"]
+[ext_resource type="Script" uid="uid://b66u6e3jerm30" path="res://shop.gd" id="1_sw5c6"]
+[ext_resource type="FontFile" uid="uid://cnnnwodlk0dp0" path="res://dogica/TTF/dogica.ttf" id="2_6lah5"]
+[ext_resource type="Script" uid="uid://d11gxp2hquaca" path="res://animation_player_11.gd" id="3_gmb2m"]
+[ext_resource type="Script" uid="uid://d3xhanql5qlat" path="res://question.gd" id="3_p5a0g"]
+[ext_resource type="FontFile" uid="uid://dffmuedamie5q" path="res://dogica/OTF/dogicabold.otf" id="4_8kdgp"]
+[ext_resource type="Script" uid="uid://bah6g0y10l0pc" path="res://question_2.gd" id="6_xqmyw"]
+[ext_resource type="Script" uid="uid://bpoc0cil8yy1v" path="res://animation_player_12.gd" id="7_sw5c6"]
+[ext_resource type="Script" uid="uid://c8nprldvejht8" path="res://question_3.gd" id="8_msgp6"]
+[ext_resource type="Script" uid="uid://brdsl5ni4cur8" path="res://animation_player_13.gd" id="9_e23gp"]
+[ext_resource type="Script" uid="uid://dwgn3v3dphgki" path="res://score_2.gd" id="10_xqmyw"]
+
+[sub_resource type="Animation" id="Animation_myf4l"]
+resource_name = "10"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_p5a0g"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xqmyw"]
+_data = {
+&"10": SubResource("Animation_myf4l"),
+&"RESET": SubResource("Animation_p5a0g")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sw5c6"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_msgp6"]
+bg_color = Color(0.32729906, 0.32729906, 0.32729903, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e23gp"]
+bg_color = Color(0.34968925, 0.34968933, 0.3496893, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rrolr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rrolr"]
+bg_color = Color(0.79199904, 0.79199916, 0.7919989, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+expand_margin_left = 15.0
+expand_margin_top = 5.0
+expand_margin_right = 15.0
+expand_margin_bottom = 5.0
+shadow_color = Color(0, 0, 0, 0.61960787)
+shadow_offset = Vector2(3, 3)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sw5c6")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -657.35675
+offset_top = -390.6711
+offset_right = -617.35675
+offset_bottom = -350.6711
+scale = Vector2(168.81427, 45.930355)
+color = Color(0, 0, 0, 1)
+
+[node name="Man" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 381.0
+offset_top = 2.0
+offset_right = 1550.0
+offset_bottom = 790.0
+texture = ExtResource("1_fgaav")
+
+[node name="Question" type="RichTextLabel" parent="."]
+layout_mode = 1
+offset_left = 40.0
+offset_top = 35.0
+offset_right = 1111.0
+offset_bottom = 263.0
+theme_override_constants/line_separation = 15
+theme_override_fonts/normal_font = ExtResource("2_6lah5")
+theme_override_font_sizes/normal_font_size = 40
+text = "Did I tell you Billy was a bit of a poet?"
+visible_characters = 0
+visible_ratio = 0.0
+script = ExtResource("3_p5a0g")
+
+[node name="AnimationPlayer11" type="AnimationPlayer" parent="Question"]
+libraries = {
+&"": SubResource("AnimationLibrary_xqmyw")
+}
+script = ExtResource("3_gmb2m")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 212.0
+offset_right = 675.0
+offset_bottom = 641.0
+theme_override_constants/separation = 15
+
+[node name="Loser2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_constants/h_separation = 15
+theme_override_fonts/font = ExtResource("4_8kdgp")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_sw5c6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_msgp6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_e23gp")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_rrolr")
+text = "Diamond Glasses(11k)
+"
+
+[node name="Loser" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_constants/h_separation = 15
+theme_override_fonts/font = ExtResource("4_8kdgp")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_sw5c6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_msgp6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_e23gp")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_rrolr")
+text = "Rotten Tomatoes (100)
+"
+
+[node name="Winner" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_constants/h_separation = 15
+theme_override_fonts/font = ExtResource("4_8kdgp")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_sw5c6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_msgp6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_e23gp")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_rrolr")
+text = "Pearl Egg (11k)"
+
+[node name="Loser3" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_constants/h_separation = 15
+theme_override_fonts/font = ExtResource("4_8kdgp")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_sw5c6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_msgp6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_e23gp")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_rrolr")
+text = "Leather Notebook (9k)"
+
+[node name="Loser4" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_constants/h_separation = 15
+theme_override_fonts/font = ExtResource("4_8kdgp")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_sw5c6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_msgp6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_e23gp")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_rrolr")
+text = "Ruby Slippers (13k)
+"
+
+[node name="Question2" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 35.0
+offset_right = 1111.0
+offset_bottom = 263.0
+theme_override_constants/line_separation = 15
+theme_override_fonts/normal_font = ExtResource("2_6lah5")
+theme_override_font_sizes/normal_font_size = 30
+text = "He says \"for my love
+ 
+a treasure meaning life
+
+is what I shall find\""
+visible_characters = 0
+visible_ratio = 0.0
+script = ExtResource("6_xqmyw")
+
+[node name="AnimationPlayer12" type="AnimationPlayer" parent="Question2"]
+libraries = {
+&"": SubResource("AnimationLibrary_xqmyw")
+}
+script = ExtResource("7_sw5c6")
+
+[node name="Question3" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 35.0
+offset_right = 1111.0
+offset_bottom = 263.0
+theme_override_constants/line_separation = 15
+theme_override_fonts/normal_font = ExtResource("2_6lah5")
+theme_override_font_sizes/normal_font_size = 40
+text = "What gift should Billy 
+purchase?"
+visible_characters = 0
+visible_ratio = 0.0
+script = ExtResource("8_msgp6")
+
+[node name="AnimationPlayer13" type="AnimationPlayer" parent="Question3"]
+libraries = {
+&"": SubResource("AnimationLibrary_xqmyw")
+}
+script = ExtResource("9_e23gp")
+
+[node name="Score2" type="Label" parent="."]
+z_index = 1
+y_sort_enabled = true
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4123264
+anchor_top = 0.6867283
+anchor_right = 0.41576687
+anchor_bottom = 0.6867283
+offset_left = 425.99994
+offset_top = 118.0
+offset_right = 465.99994
+offset_bottom = 141.0
+scale = Vector2(3.2800002, 2.72)
+theme_override_colors/font_color = Color(18.892157, 18.892157, 18.892157, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_constants/shadow_outline_size = 3
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxFlat_rrolr")
+script = ExtResource("10_xqmyw")
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="VBoxContainer/Loser2" to="." method="_on_glasses_pressed"]
+[connection signal="pressed" from="VBoxContainer/Loser" to="." method="_on_tomato_pressed"]
+[connection signal="pressed" from="VBoxContainer/Winner" to="." method="_on_egg_pressed"]
+[connection signal="pressed" from="VBoxContainer/Loser3" to="." method="_on_book_pressed"]
+[connection signal="pressed" from="VBoxContainer/Loser4" to="." method="_on_slippers_pressed"]
