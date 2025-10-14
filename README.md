@@ -1,5 +1,5 @@
 # Intro
-What your project is/does (and what it's called)
+What your project is/does (and what it's called) /n
 Love's Golden Toll is the name of the project. You are traveling with a character named Billy and he wants to purchase an expensive gift to a impress someone. However, he needs to sacrific ehis gold to progress through the trip. You do this by click on the ground where you want the gold to be to pass obstacles.
 Why you made your project
 I made this project with my twin sister for the DayDream Game Jam.
